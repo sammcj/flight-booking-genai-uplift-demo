@@ -1,11 +1,12 @@
 package com.dxbair.services.flightbooking.domain.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "airports")
 public class Airport {
-
 	@Id
 	private String iataCode;
 	private String name;
@@ -16,7 +17,6 @@ public class Airport {
 	}
 
 	public Airport(String iataCode, String name, String countryIsoCode) {
-		super();
 		this.iataCode = iataCode;
 		this.name = name;
 		this.countryIsoCode = countryIsoCode;
@@ -26,24 +26,11 @@ public class Airport {
 		return iataCode;
 	}
 
-	public void setIataCode(String iataCode) {
-		this.iataCode = iataCode;
-	}
-
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getCountryIsoCode() {
 		return countryIsoCode;
 	}
-
-	public void setCountryIsoCode(String countryIsoCode) {
-		this.countryIsoCode = countryIsoCode;
-	}
-
 }
